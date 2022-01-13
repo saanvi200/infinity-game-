@@ -55,12 +55,12 @@ function draw() {
     if (cashGroup.isTouching(car)) {
       cashGroup.destroyEach();
       cashCollection=cashCollection + 10;
-      playSound("sound(pos).wav")
+      sound.play("sound(pos).wav")
     }
     
       
     }else{
-      if(bombGroup.isTouching(car)) {
+      if(bombGroup.isTouching(car)) 
         gameState=END;
         
         car.addAnimation("car(player).png",endImg);
@@ -99,7 +99,7 @@ function createCash() {
 
 
 function createbomb(){
-  if (World.frameCount % 530 == 0) {
+  if (World.frameCount % 100 == 0) {
   var bomb = createSprite(Math.round(random(50, width-50),40, 10, 10));
   bomb.addImage(bombImg);
   bomb.scale=0.1;
